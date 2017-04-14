@@ -1,24 +1,10 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Transaction Example using Rails 
+==============================================================
 
-Things you may want to cover:
 
-* Ruby version
+The current repository is hosted on Heroku
 
-* System dependencies
+https://frozen-lake-16909.herokuapp.com/gems
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![Screenshot](http://imgur.com/HrdFUeY.png?raw=true)
