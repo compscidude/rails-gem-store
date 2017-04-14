@@ -5,9 +5,6 @@
 
 <div class="col-sm-6 col-sm-offset-3">
 
-
-
-
     <div class="panel panel-default">
         <div class="panel-heading text-center"> <h1> History </h1> </div>
 
@@ -18,16 +15,20 @@
                         <td class="col-md-2"> Date</td>
                         <td class="col-md-2"> Item Description </td>
                         <td class="col-md-2"> Change</td>
+                        <td class="col-md-2"> Accumulative </td>
                     </tr>
                 </th>
 
-                <% @Transactions.each do |transaction| %>
-                    <tr> 
-                        <td> <%= transaction.get_date %></td>
-                        <td></td>
-                        <td> <%= transaction.get_gem %> </td>
-                    </tr>
-                <% end %>
+
+           <% current_user.transactions.each do |transaction| %>
+            <tr>
+                <td><%= transaction.get_date %> </td>
+                <td><%= transaction.item.name %> </td>
+                <td><%= transaction.get_gem %> </td>
+                <td><%= transaction.accumulative %> </td>
+            </tr>
+           <% end %>
+    
             </table>
     </div>
 

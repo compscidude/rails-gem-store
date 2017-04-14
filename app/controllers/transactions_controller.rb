@@ -4,14 +4,11 @@ class TransactionsController < ApplicationController
 
     def create
         # creation should be done here. Let's rethink how we should approach this task
-        type = params[:type]
-        amount = params[:price]
-        update_gem(type, amount)
-        redirect_to gems_path
+        item = Item.find(params[:item])
+        update_gem(item)
     end 
 
     def show
-        @Transactions = current_user.transactions
     end 
     
 

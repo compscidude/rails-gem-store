@@ -1,6 +1,7 @@
 class Transaction < ApplicationRecord
   belongs_to :user
-  has_one :item
+  belongs_to :item
+  
   default_scope { order(created_at: :desc) }
 
   def get_date
@@ -8,13 +9,11 @@ class Transaction < ApplicationRecord
   end 
 
   def get_gem
-        if (self.trans_type == 'item_buy')
-         " - " + self.gem.to_s
+        if (self.item.type == 0)
+         " - " + self.item.gem.to_s
         else
-          " + " + self.gem.to_s
+          " + " + self.item.gem.to_s
         end
   end 
-
-
 
 end

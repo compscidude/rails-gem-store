@@ -10,23 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170414051647) do
+ActiveRecord::Schema.define(version: 20170414074927) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
     t.integer  "gem"
-    t.integer  "transaction_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["transaction_id"], name: "index_items_on_transaction_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "price"
+    t.integer  "item_type"
   end
 
   create_table "transactions", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "trans_type"
-    t.integer  "gem"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "item_id"
+    t.integer  "accumulative"
+    t.index ["item_id"], name: "index_transactions_on_item_id"
     t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 

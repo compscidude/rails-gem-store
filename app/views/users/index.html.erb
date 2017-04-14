@@ -5,33 +5,31 @@
 </div>
 
 
-<div class="row top-15">
-    <div class="col-sm-6 col-sm-offset-3 text-center">
-         <%= link_to 'Gem Store', gems_path, class: 'btn btn-default' %>  
-    </div>  
-</div>
-
-<div class="row top-15">
-    <div class="col-sm-6 col-sm-offset-3">
-            <hr>
-            <%= link_to 'Item 1 : 50 Gems', transaction_path(:price => 50, :type => 'item_buy'), 
-                class: 'btn btn-default btn-lg btn-block', data: {confirm: "Are you sure? It costs 50 Gems"} %>
+    <div class="row top-15">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+            <%= link_to 'Gem Store', gems_path, class: 'btn btn-default' %>  
+        </div>  
     </div>
-</div>
 
-<div class="row top-15">
-    <div class="col-sm-6 col-sm-offset-3">
-            <%= link_to 'Item 2 : 80 Gems', transaction_path(:price => 80, :type => 'item_buy'), 
-                class: 'btn btn-default btn-lg btn-block', data: {confirm: "Are you sure? It costs 80 Gems"} %>
-    </div>
-</div>
+    <hr>
 
-<div class="row top-15">
-    <div class="col-sm-6 col-sm-offset-3">
-            <%= link_to 'Item 3 : 150 Gems', transaction_path(:price => 150, :type => 'item_buy'), 
-                class: 'btn btn-default btn-lg btn-block', data: {confirm: "Are you sure? It costs 150 Gems"} %>
+    <div class="row text-center"> 
+        <h3 class="center"> Purchase Items </h3> 
     </div>
-</div>
+
+    <!-- using scopes defined in item.rb -->
+    <% items.spendable.each do |item| %>
+        <div class='row top-15'>
+            <div class="col-sm-6 col-sm-offset-3">
+                <%= link_to item.name + " :: #{item.gem} Gems", transaction_path(:item => item), class: 'btn btn-default btn-lg btn-block', 
+                data: { confirm: "Are you sure? It costs #{item.gem} " } %>
+            </div>
+        </div>
+    <% end %>
+
+
+
+
 
 
 
