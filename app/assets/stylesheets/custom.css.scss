@@ -1,0 +1,43 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+
+.top-15{
+    margin-top: 15px;
+}
+
+h3 {
+    display: inline-block;
+}
+
+ul{
+    display: block;
+}
+
+ul li{
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+    font-size: 1.5em;
+}
+
+h2{
+    opacity: 0.5;
+}
+
+h1{
+    color: #444C5C
+}
+
+.float-right{
+    float: right;
+}
+
+.gem-table button{
+    width: 80px;
+
+}
+
+.item{
+    width: 100%;
+}

@@ -1,0 +1,35 @@
+
+
+
+<div class="col-sm-6 col-sm-offset-3">
+
+    <div class="row text-center">
+        <div class="col-sm-4">
+            <%= link_to 'Home', root_path, class: 'btn btn-default top-15' %>
+        </div>
+        <div class="col-sm-4">
+                 <h2> Gem Store </h2>
+        </div>
+        <div class="col-sm-4">
+            <%= link_to 'History', history_path, class: 'btn btn-default top-15' %>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <h1> <%= current_user.gem %> </h1>
+        <small> Gems in Possession</small> 
+    </div>
+    
+    <hr>
+
+        <ul class="gem-table"> 
+            <li> 100 <small> Gems </small> <%= link_to '<button class="btn btn-default float-right"> $10  </button>'.html_safe, transaction_path(:price => 100, :type => 'gem_buy', data: {confirm: "Are you sure? You will be charged 10 USD"}) %></li>
+            <li> 200 <small> Gems </small> <%= link_to '<button class="btn btn-default float-right"> $18  </button>'.html_safe, transaction_path(:price => 200, :type => 'gem_buy', data: {confirm: "Are you sure? You will be charged 18 USD"}) %></li></li>
+            <li> 300 <small> Gems </small> <%= link_to '<button class="btn btn-default float-right"> $25  </button>'.html_safe, transaction_path(:price => 300, :type => 'gem_buy', data: {confirm: "Are you sure? You will be charged 25 USD"}) %></li> </li>
+            <li> 500 <small> Gems </small> <%= link_to '<button class="btn btn-default float-right"> $40  </button>'.html_safe, transaction_path(:price => 500, :type => 'gem_buy', data: {confirm: "Are you sure? You will be charged 40 USD"}) %></li></li>
+            <li> 1000 <small> Gems </small> <%= link_to '<button class="btn btn-default float-right"> $70 </button>'.html_safe, transaction_path(:price => 1000, :type => 'gem_buy', data: {confirm: "Are you sure? You will be charged 70 USD"}) %></li></li>
+            <li> 5000 <small> Gems </small> <%= link_to '<button class="btn btn-default float-right"> $350 </button>'.html_safe, transaction_path(:price => 5000, :type => 'gem_buy', data: {confirm: "Are you sure? You will be charged 350 USD"}) %></li></li>
+        </ul>
+
+    </div>
+

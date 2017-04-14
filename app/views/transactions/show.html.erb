@@ -1,0 +1,37 @@
+
+
+
+
+
+<div class="col-sm-6 col-sm-offset-3">
+
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading text-center"> <h1> History </h1> </div>
+
+
+            <table class="table text-center">
+                <th>
+                    <tr>
+                        <td class="col-md-2"> Date</td>
+                        <td class="col-md-2"> Item Description </td>
+                        <td class="col-md-2"> Change</td>
+                    </tr>
+                </th>
+
+                <% @Transactions.each do |transaction| %>
+                    <tr> 
+                        <td> <%= transaction.get_date %></td>
+                        <td></td>
+                        <td> <%= transaction.get_gem %> </td>
+                    </tr>
+                <% end %>
+            </table>
+    </div>
+
+</div>
+
+
+
